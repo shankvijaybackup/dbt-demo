@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "Customer-level order summary built from BigQuery public ecommerce data."
+    columns:
+      - name: user_id
+        description: "Unique user identifier."
+        tests:
+          - not_null
+          - unique
+
+      - name: total_orders
+        description: "Total completed orders for the user."
+        tests:
+          - not_null
+
+      - name: total_spend
+        description: "Total completed order value for the user."
+        tests:
+          - not_null
